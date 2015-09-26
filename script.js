@@ -1,13 +1,19 @@
-var isPalindrome = function (string) {
-    if (string == string.split(' ').reverse().join('')) {
-        alert(string + ' is palindrome.');
+function isPalindrome(p) {
+    var w = p.replace(/\s/g,"");
+
+if (w == w.split('').reverse().join('')) {
+        alert(w + ' is palindrome.');
     }
     else {
-        alert(string + ' is not palindrome.');
+        alert(w + ' is not palindrome.');
     }
 }
 
-document.getElementById('form_id').onsubmit = function() {
-   isPalindrome(document.getElementById('your_input').value);
+el = document.getElementById('form_id');
+console.log(el);
+ el.onsubmit = handlerSubmmit;
+
+function handlerSubmmit(){
+    isPalindrome(document.getElementById('my_input').value);
     return false;
 }
